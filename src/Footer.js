@@ -1,5 +1,5 @@
 import React from "react";
-import "./Footer.css";
+import ".components/Footer.css";
 import PlayCircleOutlineIcon from "@material-ui/icons";
 import SkipPreviousQuestion from "@material-ui/icons/SkipPrevious";
 import SkipNextIcon from "@material-ui/icons/SkipNext";
@@ -13,9 +13,12 @@ function Footer() {
   return (
     <div className="footer">
       <div className="footer__left">
-        <img className = "footer__albumLogo" 
-        src = "https://www.mockrabbit.com/wp-content/uploads/2018/12/Become-a-Full-Stack-Developers.jpg" alt = "" />
-        <div className = "footer__songInfo">
+        <img
+          className="footer__albumLogo"
+          src="https://www.mockrabbit.com/wp-content/uploads/2018/12/Become-a-Full-Stack-Developers.jpg"
+          alt=""
+        />
+        <div className="footer__songInfo">
           <h4>Yeah!</h4>
         </div>
       </div>

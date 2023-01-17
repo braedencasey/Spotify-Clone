@@ -1,5 +1,8 @@
 .player__body {
-    display: flex;
-
+  display: flex;
 }
 
+.player {
+  display: flex;
+  flex-direction: column;
+}
