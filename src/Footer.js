@@ -14,7 +14,7 @@ function Footer() {
     <div className="footer">
       <div className="footer__left">
         <img className = "footer__albumLogo" 
-        src = "https://upload.wikimedia.org/wikipedia" alt = "" />
+        src = "https://www.mockrabbit.com/wp-content/uploads/2018/12/Become-a-Full-Stack-Developers.jpg" alt = "" />
         <div className = "footer__songInfo">
           <h4>Yeah!</h4>
         </div>
