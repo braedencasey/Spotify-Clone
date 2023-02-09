@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Login from "./Login";
 import { getTokenFromUrl } from "./spotify";
 import SpotifyWebApi from "spotify-web-api-js";
 import Player from "./Player";
-import { DataLayer, useDataLayerValue } from "./DataLayer";
+import { useStateValue } from "./StateProvider";
 
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const [{ user, token }, dispatch] = useDataLayerValue();
+  const [{ token }, dispatch] = useStateValue();
 
   //Runs code based on a given condition
   useEffect(() => {
@@ -45,15 +45,13 @@ function App() {
           discover_weekly: response,
         })
       );
-
-      
     }
-  }, []);
+  }, [token, dispatch]);
 
   return (
     <div className="app">
-      {token ? <Player spotify={spotify} /> : <Login />}
-      <Login />
+      {!token && <Login />}
+      {token && <Player spotify={spotify} />}
     </div>
   );
 }

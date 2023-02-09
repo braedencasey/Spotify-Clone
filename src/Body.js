@@ -1,14 +1,14 @@
 import React from "react";
 import Header from "./Header";
-import { useDataLayerValue } from "./DataLayer";
-import PlayCircleFilledIcon from "@material-ui/icons";
+import { useStateValue } from "./StateProvider";
+import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
-import SongRow from "./Components/SongRow";
+import SongRow from "./SongRow";
 import "./Body.css";
 
 function Body({ spotify }) {
-  const [{ discover_weekly }, dispatch] = useDatalayer();
+  const [{ discover_weekly }, dispatch] = useStateValue();
 
   const playPlaylist = (id) => {
     spotify
@@ -65,7 +65,7 @@ function Body({ spotify }) {
         <div className="body__icons">
           <PlayCircleFilledIcon
             className="body__shuffle"
-            onClick={playPlatlist}
+            onClick={playPlaylist}
           />
           <FavoriteIcon fontsize="large" />
           <MoreHorizIcon />
